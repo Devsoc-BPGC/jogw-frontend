@@ -501,13 +501,13 @@ const AdminDashboard = () => {
   const null1 = [];
 
   const hc1 = () => {
-    if (j > 50) {
-      setj(j - 50);
+    if (j > 200) {
+      setj(j - 200);
       setValue(null);
       setMessageId(null1);
       if (checked25) setChecked25(!checked25);
       if (checked50) setChecked50(!checked50);
-    } else if (j <= 50) {
+    } else if (j <= 200) {
       setj(0);
       setValue(null);
       setMessageId(null1);
@@ -517,20 +517,20 @@ const AdminDashboard = () => {
   };
 
   const hc2 = () => {
-    if (j + 50 < f.length - 50) {
-      setj(j + 50);
+    if (j + 200 < f.length - 200) {
+      setj(j + 200);
       setValue(null);
       setMessageId(null1);
       if (checked25) setChecked25(!checked25);
       if (checked50) setChecked50(!checked50);
-    } else if (f.length - (j + 50) < 50 && f.length - (j + 50) > 0) {
-      setj(j + 50);
+    } else if (f.length - (j + 200) < 200 && f.length - (j + 200) > 0) {
+      setj(j + 200);
       setValue(null);
       setMessageId(null1);
       if (checked25) setChecked25(!checked25);
       if (checked50) setChecked50(!checked50);
-    } else if (j + 50 == f.length - 50) {
-      setj(j + 50);
+    } else if (j + 200 == f.length - 200) {
+      setj(j + 200);
       setValue(null);
       setMessageId(null1);
       if (checked25) setChecked25(!checked25);
@@ -846,6 +846,7 @@ const AdminDashboard = () => {
                       if (redFlag === red) {
                         await setf(red);
                       }
+                      await setMessageId([]);
                       await setTimeout(() => setSpinner(false), 500);
                     }}
                   >
@@ -879,8 +880,8 @@ const AdminDashboard = () => {
                   redFlaggedMsgs
                     .slice(
                       j,
-                      j + 50 <= redFlaggedMsgs.length
-                        ? j + 50
+                      j + 200 <= redFlaggedMsgs.length
+                        ? j + 200
                         : redFlaggedMsgs.length
                     )
                     .map((message, index) => (
@@ -905,8 +906,8 @@ const AdminDashboard = () => {
                   greenFlaggedMsgs
                     .slice(
                       j,
-                      j + 50 <= greenFlaggedMsgs.length
-                        ? j + 50
+                      j + 200 <= greenFlaggedMsgs.length
+                        ? j + 200
                         : greenFlaggedMsgs.length
                     )
                     .map((message) => (
@@ -930,8 +931,8 @@ const AdminDashboard = () => {
                   yellowFlaggedMsgs
                     .slice(
                       j,
-                      j + 50 <= yellowFlaggedMsgs.length
-                        ? j + 50
+                      j + 200 <= yellowFlaggedMsgs.length
+                        ? j + 200
                         : yellowFlaggedMsgs.length
                     )
                     .map((message) => (
@@ -1022,6 +1023,7 @@ const AdminDashboard = () => {
                   if (redFlag === red) {
                     await setf(red);
                   }
+                  await setMessageId([]);
                   await setTimeout(() => setSpinner(false), 500);
                 }}
               >
@@ -1034,15 +1036,15 @@ const AdminDashboard = () => {
                   startIcon={<ChevronLeftRounded />}
                   disabled={j === 0}
                 >
-                  Previous 50
+                  Previous 200
                 </Button>
                 <Button
                   className={classes.paginatorButton}
                   onClick={hc2}
                   endIcon={<ChevronRightRounded />}
-                  disabled={50 >= f.length - j}
+                  disabled={200 >= f.length - j}
                 >
-                  Next 50
+                  Next 200
                 </Button>
               </div>
               <Button
@@ -1062,6 +1064,7 @@ const AdminDashboard = () => {
                   if (redFlag === red) {
                     await setf(red);
                   }
+                  await setMessageId([]);
                   await setTimeout(() => setSpinner(false), 500);
                 }}
               >
