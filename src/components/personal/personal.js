@@ -18,9 +18,6 @@ import Navbar from '../navbar/navbar';
 import { Redirect } from 'react-router-dom';
 import URL from '../util/url';
 import '../personal/loader.css';
-import pdfMake from 'pdfmake/build/pdfmake';
-import pdfFonts from 'pdfmake/build/vfs_fonts';
-pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 import { saveAs } from 'file-saver';
 var FileSaver = require('file-saver');
