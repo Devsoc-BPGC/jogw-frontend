@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import GetAppIcon from '@material-ui/icons/GetApp';
 import '../personal/personal.css';
 import PersonalCards from '../personal/personalcards';
 import SendMessagePopup from '../letterpopup/SendMessagePopup';
@@ -17,6 +18,12 @@ import Navbar from '../navbar/navbar';
 import { Redirect } from 'react-router-dom';
 import URL from '../util/url';
 import '../personal/loader.css';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+import { saveAs } from 'file-saver';
+var FileSaver = require('file-saver');
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -80,6 +87,22 @@ const useStyles = makeStyles((theme) => ({
   c1: {
     padding: '2rem 0rem 0rem 4rem',
     width: '92vw',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  button: {
+    background: '#00CF53',
+    color: 'white',
+    borderRadius: '25px',
+    paddingLeft: '1.5rem',
+    paddingRight: '1.5rem',
+    textTransform: 'none',
+    '&:hover': {
+      background: '#00CF53',
+      color: 'white',
+    },
+    fontFamily: 'Oxygen',
   },
   c2: {
     width: '92vw',
@@ -133,6 +156,7 @@ const useStyles = makeStyles((theme) => ({
       padding: 0,
       width: 'max-content',
       textAlign: 'center',
+      flexDirection: 'column-reverse',
     },
     c2: {
       padding: 0,
@@ -183,6 +207,8 @@ const useStyles = makeStyles((theme) => ({
     c1: {
       width: '92vw',
       textAlign: 'left',
+      flexDirection: 'row',
+      alignItems: 'center',
     },
     c2: {
       width: '92vw',
@@ -349,6 +375,19 @@ export default function Personal() {
     setEnables(!enables);
   };
 
+  const handleClick = () => {
+    const content = get.map(
+      (post, index) => `${index + 1}. ${post.body}\n\n\n\n\n\n\n\n`
+    );
+    var blob = new Blob(content, {
+      type: 'text/plain;charset=utf-8',
+    });
+    saveAs(blob, 'mojs.txt');
+    // const docDefinition = { content };
+    // console.log(content);
+    // pdfMake.createPdf(docDefinition).download('MoJs.pdf');
+  };
+
   return (
     <Fragment>
       <div className={classes.root} id="root">
@@ -418,6 +457,15 @@ export default function Personal() {
                       .toLowerCase()
                       .slice(1)}
                 </Typography>
+                <Button
+                  variant="contained"
+                  className={classes.button}
+                  size="large"
+                  onClick={handleClick}
+                  startIcon={<GetAppIcon />}
+                >
+                  Download your Mojs!
+                </Button>
               </Box>
 
               <Box style={{ textAlign: 'center' }} className={classes.c2}>
