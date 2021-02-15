@@ -16,7 +16,9 @@ export const Data1 = createContext();
 import Navbar from '../navbar/navbar';
 import { Redirect } from 'react-router-dom';
 import URL from '../util/url';
+import GetAppIcon from '@material-ui/icons/GetApp';
 import '../personal/loader.css';
+var FileSaver = require('file-saver');
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -80,6 +82,22 @@ const useStyles = makeStyles((theme) => ({
   c1: {
     padding: '2rem 0rem 0rem 4rem',
     width: '92vw',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  button: {
+    background: '#00CF53',
+    color: 'white',
+    borderRadius: '25px',
+    paddingLeft: '1.5rem',
+    paddingRight: '1.5rem',
+    textTransform: 'none',
+    '&:hover': {
+      background: '#00CF53',
+      color: 'white',
+    },
+    fontFamily: 'Oxygen',
   },
   c2: {
     width: '92vw',
@@ -133,6 +151,7 @@ const useStyles = makeStyles((theme) => ({
       padding: 0,
       width: 'max-content',
       textAlign: 'center',
+      flexDirection: 'column-reverse',
     },
     c2: {
       padding: 0,
@@ -183,6 +202,8 @@ const useStyles = makeStyles((theme) => ({
     c1: {
       width: '92vw',
       textAlign: 'left',
+      flexDirection: 'row',
+      alignItems: 'center',
     },
     c2: {
       width: '92vw',
@@ -287,6 +308,30 @@ export default function Personal() {
   }
 
   const [get, setGet] = useState([]);
+
+  const handleClick = () => {
+    const content = get.map(
+      (post, index) => `${index + 1}. ${post.body}\n\n\n\n\n`
+    );
+    var blob = new Blob(content, {
+      type: 'text/plain;charset=utf-8\n\n',
+    });
+    FileSaver.saveAs(blob, 'mojs.txt');
+  };
+
+  const exportasHTML = () => {
+    const content = get.map(
+      (post, index) => `${index + 1}. ${post.body}<br/><br/><br/><br/>`
+    );
+    const element = document.createElement('a');
+    const file = new Blob([content], {
+      type: 'text/plain;charset=utf-8',
+    });
+    element.href = window.URL.createObjectURL(file);
+    element.download = `MOJ.html`;
+    document.body.appendChild(element);
+    element.click();
+  };
 
   const [color, setColor] = useState('#FFFDE8');
 
@@ -418,8 +463,25 @@ export default function Personal() {
                       .toLowerCase()
                       .slice(1)}
                 </Typography>
+                <Button
+                  variant="contained"
+                  className={classes.button}
+                  size="large"
+                  onClick={handleClick}
+                  startIcon={<GetAppIcon />}
+                >
+                  Download your Mojs!
+                </Button>
               </Box>
-
+              <Button
+                variant="contained"
+                className={classes.button}
+                size="large"
+                onClick={exportasHTML}
+                startIcon={<GetAppIcon />}
+              >
+                Download your Mojs as HTML
+              </Button>
               <Box style={{ textAlign: 'center' }} className={classes.c2}>
                 <Typography className={classes.hot1}>Messages</Typography>
               </Box>
