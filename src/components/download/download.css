@@ -1,0 +1,31 @@
+@media only screen and (max-width: 759px) {
+  .set1::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Track */
+  .set1::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  .set1::-webkit-scrollbar-thumb {
+    background: #ef4646;
+  }
+
+  /* Handle on hover */
+  .set1::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+@media only screen and (min-height: 0px) and (max-height: 600px) and (min-width: 500px) and (max-width: 1907.9px) {
+  .ken {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  #fab {
+    transform: scale(2);
+  }
+}

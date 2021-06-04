@@ -1,0 +1,102 @@
+/* spinner */
+.spinner {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.spinner div {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 10px solid transparent;
+  border-top-color: #ef4646;
+  border-radius: 50%;
+  animation: spinner1 1.2s linear infinite;
+}
+
+.spinner div:nth-child(2) {
+  border: 10px solid transparent;
+  border-bottom-color: #ef4646;
+  animation: spinner2 1.2s linear infinite;
+}
+
+@keyframes spinner1 {
+  0% {
+    transform: rotate(0deg);
+    border-width: 10px;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-width: 1px;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-width: 10px;
+  }
+}
+
+@keyframes spinner2 {
+  0% {
+    transform: rotate(0deg);
+    border-width: 1px;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-width: 10px;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-width: 1px;
+  }
+}
+
+.spinwrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0rem;
+}
+/* @media only screen and (min-width: 1380px) and (max-width: 1510px) {
+  .spinwrap {
+    margin-left: 41vw;
+  }
+}
+@media only screen and (min-width: 1510px) and (max-width: 1800px) {
+  .spinwrap {
+    margin-left: 35vw;
+  }
+}
+@media only screen and (min-width: 1800px) and (max-width: 2080px) {
+  .spinwrap {
+    margin-left: 31vw;
+  }
+}
+@media only screen and (min-width: 1180px) and (max-width: 1380px) {
+  .spinwrap {
+    margin-left: 38.5vw;
+  }
+}
+@media only screen and (min-width: 2080px) and (max-width: 2900px) {
+  .spinwrap {
+    margin-left: 27.8vw;
+  }
+}
+
+@media only screen and (min-width: 380px) and (max-width: 600px) {
+  .spinwrap {
+    margin-left: 26vw;
+  }
+}
+
+@media only screen and (min-width: 280px) and (max-width: 379.999px) {
+  .spinwrap {
+    margin-left: 24vw;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1180px) {
+  .spinwrap {
+    margin-left: 38vw;
+  }
+} */
