@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+.tux {
+  font-family: 'Oxygen';
+  color: #EF4646;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3rem;
+  width: 10vw;
+  margin-left: 49px;
+}
+
+.tux:hover {
+  cursor: pointer;
+}
+@media only screen and (min-width: 1190px) and (max-width: 1800px) {
+  .tux {
+    margin-left: 4vw;
+  }
+}
+
+.tux1 {
+  font-family: 'Oxygen';
+  color: #EF4646;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 6px;
+}
+
+@media only screen and (max-height: 800px) and (min-height: 700px) and (max-width: 1350px) and (min-width: 1110px) {
+  .tux {
+    font-family: 'Oxygen';
+    color: #EF4646;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-left: 3vw;
+  }
+
+  .tux1 {
+    font-family: 'Oxygen';
+    color: #EF4646;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+  #free {
+    transform: scale(0.69);
+  }
+  #free1 {
+    transform: scale(0.69);
+  }
+  #free2 {
+    transform: scale(0.78);
+  }
+}
+@media only screen and (min-width: 300px) and (max-width: 500px) {
+  #free {
+    transform: scale(0.69);
+    margin-left: -2vw;
+  }
+  #free1 {
+    transform: scale(0.69);
+  }
+  #free2 {
+    transform: scale(0.69);
+  }
+  .tux {
+    font-family: 'Oxygen';
+    color: #EF4646;
+    font-style: normal;
+    font-weight: bold;
+    width: 50vw;
+    margin-left: 49px;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 800px) {
+  #free {
+    transform: scale(0.79);
+  }
+  #free1 {
+    transform: scale(0.69);
+  }
+  #free2 {
+    transform: scale(0.69);
+  }
+}

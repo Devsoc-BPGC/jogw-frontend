@@ -461,7 +461,8 @@ export default function SendMessagePopup({
             onClose={handleCloseSiteDisabled}
           >
             <Alert onClose={handleCloseSiteDisabled} severity="error">
-              All good things come to an end. See you next year on campus (fingers crossed).
+              All good things come to an end. See you next year on campus
+              (fingers crossed).
             </Alert>
           </Snackbar>
           <Snackbar
