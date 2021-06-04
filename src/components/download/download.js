@@ -23,7 +23,7 @@ import devSocLogo from '../../imageassets/DevSoc.png';
 const useStyles = makeStyles((theme) => ({
   '@global': {
     '*::-webkit-scrollbar': {
-      width: '10px',
+      width: '0px',
       backgroundColor: '#FFF4F1',
     },
     '*::-webkit-scrollbar-thumb': {
@@ -144,7 +144,7 @@ const useStyles = makeStyles((theme) => ({
   '@media(min-width: 320px)': {
     cA: {
       padding: 0,
-      width: '100%',
+      width: '100vw',
       alignItems: 'center',
     },
     c1: {

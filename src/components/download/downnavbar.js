@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(2),
   },
   margin: {
     borderBottom: '3px solid green',
@@ -42,15 +42,12 @@ const useStyles = makeStyles((theme) => ({
     // justifyContent: 'center',
     // alignItems: 'center',
     margin: 'auto',
-    marginLeft: '20px',
+    marginLeft: '10px',
   },
   nirmanLogo: {
     width: 120,
   },
   '@media(max-width: 540px)': {
-    hide: {
-      display: 'none',
-    },
     nirmanLogo: {
       width: 100,
     },
@@ -74,12 +71,11 @@ export default function DownNavbar({ navHeading, name, bitsId, stats }) {
         <Grid
           container
           direction="row"
-          // justify="space-between"
           display="flex"
-          alignItems="flex-start"
+          justify="space-between"
+          style={{ width: '90vw' }}
         >
-          <Grid item xs sm md={4} lg={4}>
-            <div onClick={handler1} className="tux" id="free"></div>
+          <Grid item>
             <div className={classes.nirman} id="nirman">
               <a
                 href="https://instagram.com/nirmaangoa?igshid=5bld8fkffclm"
@@ -93,12 +89,15 @@ export default function DownNavbar({ navHeading, name, bitsId, stats }) {
               </a>
             </div>
           </Grid>
-          <Grid className={classes.hide} item xs sm md={4} lg={4}>
-            <div className="tux1" id="free1">
+          <Grid item style={{ alignSelf: 'center' }} item>
+            <div className="tux1" id="fre1">
               {navHeading}
             </div>
           </Grid>
-          {/* <Grid item xs sm md={4} lg={4} className={classes.top} id="free2">
+          <Grid item style={{ alignSelf: 'center' }} item>
+            <div></div>
+          </Grid>
+          {/* <Grid item xs sm md={4} lg={4} className={classes.top} id="fre2">
             <Notifs />
             <Profile name={name} bitsId={bitsId} />
             {!stats ? <Stats /> : null}

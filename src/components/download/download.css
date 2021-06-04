@@ -1,6 +1,6 @@
 @media only screen and (max-width: 759px) {
   .set1::-webkit-scrollbar {
-    width: 4px;
+    width: 0px;
   }
 
   /* Track */
