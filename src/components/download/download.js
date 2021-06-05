@@ -19,6 +19,7 @@ import URL from '../util/url';
 import '../download/loader.css';
 import SaveIcon from '@material-ui/icons/Save';
 import devSocLogo from '../../imageassets/DevSoc.png';
+import { GetApp } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -131,26 +132,23 @@ const useStyles = makeStyles((theme) => ({
     color: 'black',
   },
   downfoot: {
-    textAlign: 'right',
+    textAlign: 'center',
     color: '#6B6B6B',
     fontFamily: 'Oxygen',
     fontWeight: 'bold',
-    fontSize: '2vmax',
+    fontSize: '1.8vmax',
   },
   devSocLogo: {
-    width: 100,
+    width: 45,
     verticalAlign: 'middle',
   },
   '@media(min-width: 320px)': {
     cA: {
       padding: 0,
       width: '100vw',
-      alignItems: 'center',
     },
     c1: {
       padding: 0,
-      width: 'max-content',
-      textAlign: 'center',
     },
     c2: {
       padding: 0,
@@ -451,9 +449,8 @@ export default function Download() {
                   size="small"
                   className={classes.downButton}
                   onClick={addIconClick}
-                  startIcon={<SaveIcon />}
                 >
-                  Export as PDF
+                  <GetApp />
                 </Button>
               </Box>
             </Box>
@@ -560,7 +557,7 @@ export default function Download() {
                   by{' '}
                   <a href="https://devsoc.club/" target="_blank">
                     <img
-                      src={devSocLogo}
+                      src="https://devsoc.club/assets/img/logo.png"
                       alt="DevSoc"
                       className={classes.devSocLogo}
                     />

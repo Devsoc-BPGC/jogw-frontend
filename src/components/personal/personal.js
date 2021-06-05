@@ -405,7 +405,7 @@ export default function Personal() {
               onClick={addIconClick}
               startIcon={<SaveIcon />}
             >
-              Download
+              Export as Pdf
             </Button>
           </div>
           <Box className={classes.inner}>
