@@ -36,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
       cursor: 'pointer',
       transform: 'translateY(-2px)',
     },
+    '@media print': {
+      breakInside: 'avoid',
+    },
   },
   msgCard1: {
     padding: '8px 15px 15px 15px',
