@@ -20,6 +20,15 @@ import '../download/loader.css';
 import SaveIcon from '@material-ui/icons/Save';
 import devSocLogo from '../../imageassets/DevSoc.png';
 import { GetApp } from '@material-ui/icons';
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  useMediaQuery,
+  useTheme,
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -237,6 +246,10 @@ export default function Download() {
 
   const [fix, setfix] = useState(0);
   const [load, setload] = useState(true);
+  const [instructionDialogOpen, setInstructionDialogOpen] = useState(true);
+
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
   // const [count, setcount] = useState();
 
   async function call1() {
@@ -370,6 +383,50 @@ export default function Download() {
 
   return (
     <Fragment>
+      {/* instructions dialog */}
+      <Dialog
+        open={instructionDialogOpen}
+        onClose={() => setInstructionDialogOpen(false)}
+        aria-labelledby="responsive-dialog-title"
+      >
+        <DialogTitle
+          id="responsive-dialog-title"
+          style={{
+            color: '#ef4646',
+          }}
+        >
+          {'Instructions'}
+        </DialogTitle>
+        <DialogContent>
+          <ol type={'1'}>
+            <li>{'Press the download button on top'}</li>
+            <li>{'Print dialog would open, select save as PDF'}</li>
+            <li>
+              <b>{'Important: '}</b>
+              {
+                'select the "background graphics" option in the dialog so that you get the colours in the page'
+              }
+            </li>
+          </ol>
+          <DialogContentText>
+            <span style={{ margin: '1rem 0' }}>
+              {'This is due to platform limitations.'}
+            </span>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            autoFocus
+            onClick={() => setInstructionDialogOpen(false)}
+            style={{
+              color: '#ef4646',
+            }}
+          >
+            Got It!
+          </Button>
+        </DialogActions>
+      </Dialog>
+
       <div className={classes.root} id="root">
         {/* <SendMessagePopup
           count={count}
