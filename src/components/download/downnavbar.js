@@ -42,14 +42,23 @@ const useStyles = makeStyles((theme) => ({
     // justifyContent: 'center',
     // alignItems: 'center',
     margin: 'auto',
-    marginLeft: '10px',
   },
   nirmanLogo: {
     width: 120,
+    marginRight: 10,
+  },
+  devsocLogo: {
+    width: 60,
+    margin: 20,
   },
   '@media(max-width: 540px)': {
     nirmanLogo: {
       width: 100,
+      marginRight: 0,
+    },
+    devsocLogo: {
+      width: 40,
+      margin: 10,
     },
   },
 }));
@@ -73,10 +82,26 @@ export default function DownNavbar({ navHeading, name, bitsId, stats }) {
           direction="row"
           display="flex"
           justify="space-between"
-          style={{ width: '90vw' }}
+          style={{ width: '100vw' }}
         >
-          <Grid item>
-            <div className={classes.nirman} id="nirman">
+          <Grid item style={{ alignSelf: 'center' }}>
+            <div>
+              <a href="https://devsoc.club" target="_blank">
+                <img
+                  src="https://devsoc.club/assets/img/logo.png"
+                  alt="devsoc"
+                  className={classes.devsocLogo}
+                />
+              </a>
+            </div>
+          </Grid>
+          <Grid item style={{ alignSelf: 'center' }} item>
+            <div className="tux1" id="fre1">
+              {navHeading}
+            </div>
+          </Grid>
+          <Grid item style={{ alignSelf: 'center' }} item>
+            <div className={classes.nirman}>
               <a
                 href="https://instagram.com/nirmaangoa?igshid=5bld8fkffclm"
                 target="_blank"
@@ -88,14 +113,6 @@ export default function DownNavbar({ navHeading, name, bitsId, stats }) {
                 />
               </a>
             </div>
-          </Grid>
-          <Grid item style={{ alignSelf: 'center' }} item>
-            <div className="tux1" id="fre1">
-              {navHeading}
-            </div>
-          </Grid>
-          <Grid item style={{ alignSelf: 'center' }} item>
-            <div></div>
           </Grid>
           {/* <Grid item xs sm md={4} lg={4} className={classes.top} id="fre2">
             <Notifs />

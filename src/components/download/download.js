@@ -398,21 +398,25 @@ export default function Download() {
           {'Instructions'}
         </DialogTitle>
         <DialogContent>
-          <ol type={'1'}>
+          <ol>
             <li>{'Press the download button on top'}</li>
+            <br />
             <li>{'Print dialog would open, select save as PDF'}</li>
+            <br />
+
             <li>
               <b>{'Important: '}</b>
               {
                 'select the "background graphics" option in the dialog so that you get the colours in the page'
               }
             </li>
+            <br />
+            <li>
+              <DialogContentText>
+                <span>{'Thank You :)'}</span>
+              </DialogContentText>
+            </li>
           </ol>
-          <DialogContentText>
-            <span style={{ margin: '1rem 0' }}>
-              {'This is due to platform limitations.'}
-            </span>
-          </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button
