@@ -44,20 +44,20 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
   nirmanLogo: {
-    width: 120,
-    marginRight: 10,
+    width: 125,
+    marginLeft: 10,
   },
   devsocLogo: {
-    width: 60,
+    width: 58,
     margin: 20,
   },
   '@media(max-width: 540px)': {
     nirmanLogo: {
-      width: 100,
-      marginRight: 0,
+      width: 105,
+      marginLeft: 0,
     },
     devsocLogo: {
-      width: 40,
+      width: 38,
       margin: 10,
     },
   },
@@ -85,12 +85,15 @@ export default function DownNavbar({ navHeading, name, bitsId, stats }) {
           style={{ width: '100vw' }}
         >
           <Grid item style={{ alignSelf: 'center' }}>
-            <div>
-              <a href="https://devsoc.club" target="_blank">
+            <div className={classes.nirman}>
+              <a
+                href="https://instagram.com/nirmaangoa?igshid=5bld8fkffclm"
+                target="_blank"
+              >
                 <img
-                  src="https://devsoc.club/assets/img/logo.png"
-                  alt="devsoc"
-                  className={classes.devsocLogo}
+                  src={nirmanLogo}
+                  alt="nirman"
+                  className={classes.nirmanLogo}
                 />
               </a>
             </div>
@@ -101,15 +104,12 @@ export default function DownNavbar({ navHeading, name, bitsId, stats }) {
             </div>
           </Grid>
           <Grid item style={{ alignSelf: 'center' }} item>
-            <div className={classes.nirman}>
-              <a
-                href="https://instagram.com/nirmaangoa?igshid=5bld8fkffclm"
-                target="_blank"
-              >
+            <div>
+              <a href="https://devsoc.club" target="_blank">
                 <img
-                  src={nirmanLogo}
-                  alt="nirman"
-                  className={classes.nirmanLogo}
+                  src="https://devsoc.club/assets/img/logo.png"
+                  alt="devsoc"
+                  className={classes.devsocLogo}
                 />
               </a>
             </div>

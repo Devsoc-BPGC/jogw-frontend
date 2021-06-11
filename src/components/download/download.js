@@ -145,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#6B6B6B',
     fontFamily: 'Oxygen',
     fontWeight: 'bold',
-    fontSize: '1.8vmax',
+    fontSize: '1.7vmax',
   },
   devSocLogo: {
     width: 45,
@@ -615,14 +615,7 @@ export default function Download() {
                     />
                   </svg>
                   {'  '}
-                  by{' '}
-                  <a href="https://devsoc.club/" target="_blank">
-                    <img
-                      src="https://devsoc.club/assets/img/logo.png"
-                      alt="DevSoc"
-                      className={classes.devSocLogo}
-                    />
-                  </a>
+                  by DevSoc
                 </Typography>
               </Fragment>
             )}
